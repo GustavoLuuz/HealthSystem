@@ -1,6 +1,6 @@
 using System;
 
-namespace HealthSystem.Dominio
+namespace HealthSystem.Dominio.Entidades
 {
     public class Medico : Pessoa
     {

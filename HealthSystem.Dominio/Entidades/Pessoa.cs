@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace HealthSystem.Dominio
+namespace HealthSystem.Dominio.Entidades
 {
     public abstract class Pessoa
     {
