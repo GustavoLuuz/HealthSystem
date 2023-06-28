@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "HealthSystem.Domain.Api": {
+    "HealthSystem.Dominio.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

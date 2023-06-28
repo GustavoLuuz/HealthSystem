@@ -1,4 +1,4 @@
-namespace HealthSystem.Tests;
+namespace HealthSystem.Testes;
 
 public class UnitTest1
 {

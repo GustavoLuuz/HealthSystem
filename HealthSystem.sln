@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Domain", "HealthSystem.Domain\HealthSystem.Domain.csproj", "{0CFBF63E-103F-41F5-ABD5-D637B92295CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Dominio", "HealthSystem.Dominio\HealthSystem.Dominio.csproj", "{0CFBF63E-103F-41F5-ABD5-D637B92295CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Api", "HealthSystem.Api\HealthSystem.Api.csproj", "{E9AAE2B4-DCB6-4EE6-8876-F249B69E7B0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Infra", "HealthSystem.Infra\HealthSystem.Infra.csproj", "{D8BE0F88-1143-41C4-A50C-9E419A589CAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Tests", "HealthSystem.Tests\HealthSystem.Tests.csproj", "{95577C7C-57FA-450F-8A09-4E769A58DABB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Testes", "HealthSystem.Testes\HealthSystem.Testes.csproj", "{18D018C8-FF57-4CBB-9EE8-8A53CD822868}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,5 +40,9 @@ Global
 		{95577C7C-57FA-450F-8A09-4E769A58DABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95577C7C-57FA-450F-8A09-4E769A58DABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95577C7C-57FA-450F-8A09-4E769A58DABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
