@@ -1,3 +1,4 @@
+using HealthSystem.Aplicacao.Comandos;
 using HealthSystem.Aplicacao.Servicos.Interfaces;
 using HealthSystem.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
@@ -33,11 +34,11 @@ namespace HealthSystem.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<int>> CadastrarMedico([FromBody] Medico medico)
+        public async Task<ActionResult<int>> CadastrarMedico([FromBody] CriarMedicoComando comando)
         {
             try
             {
-                var medicoId = await _medicoServico.CadastrarMedico(medico);
+                var medicoId = await _medicoServico.CadastrarMedico(comando);
                 return CreatedAtAction(nameof(ObterMedicoPorId), new { id = medicoId }, medicoId);
             }
             catch (Exception ex)
@@ -47,14 +48,14 @@ namespace HealthSystem.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> AtualizarMedico(int id, [FromBody] Medico medico)
+        public async Task<ActionResult> AtualizarMedico(int id, [FromBody] AtualizarMedicoComando medicoComando)
         {
-            if (id != medico.Id)
+            if (id != medicoComando.Id)
                 return BadRequest();
 
             try
             {
-                await _medicoServico.AtualizarMedico(medico);
+                await _medicoServico.AtualizarMedico(medicoComando);
                 return NoContent();
             }
             catch (Exception ex)
@@ -62,6 +63,7 @@ namespace HealthSystem.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> RemoverMedico(int id)

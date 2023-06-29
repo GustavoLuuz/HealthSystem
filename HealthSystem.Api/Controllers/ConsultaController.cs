@@ -1,3 +1,5 @@
+using HealthSystem.Aplicacao.Comandos;
+using HealthSystem.Aplicacao.Comandos.ConsultaComandos;
 using HealthSystem.Dominio.Entidades;
 using HealthSystem.Servicos.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -33,11 +35,11 @@ namespace HealthSystem.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<int>> AgendarConsulta([FromBody] Consulta consulta)
+        public async Task<ActionResult<int>> AgendarConsulta([FromBody] CriarConsultaComando consultaComando)
         {
             try
             {
-                var consultaId = await _consultaServico.AgendarConsulta(consulta);
+                var consultaId = await _consultaServico.AgendarConsulta(consultaComando);
                 return CreatedAtAction(nameof(ObterConsultaPorId), new { id = consultaId }, consultaId);
             }
             catch (Exception ex)
@@ -47,14 +49,14 @@ namespace HealthSystem.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> AtualizarConsulta(int id, [FromBody] Consulta consulta)
+        public async Task<ActionResult> AtualizarConsulta(int id, [FromBody] AtualizarConsultaComando consultaComando)
         {
-            if (id != consulta.Id)
+            if (id != consultaComando.Id)
                 return BadRequest();
 
             try
             {
-                await _consultaServico.AtualizarConsulta(consulta);
+                await _consultaServico.AtualizarConsulta(consultaComando);
                 return NoContent();
             }
             catch (Exception ex)

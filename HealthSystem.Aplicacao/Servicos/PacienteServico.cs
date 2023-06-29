@@ -1,8 +1,6 @@
 using HealthSystem.Dominio.Entidades;
-using HealthSystem.Infra.Repositorios.Interfaces;
+using HealthSystem.Dominio.InterfaceRepositorios;
 using HealthSystem.Servicos.Interfaces;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace HealthSystem.Servicos
 {

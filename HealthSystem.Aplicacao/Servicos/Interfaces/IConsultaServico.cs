@@ -1,3 +1,4 @@
+using HealthSystem.Aplicacao.Comandos.ConsultaComandos;
 using HealthSystem.Dominio.Entidades;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,8 +9,8 @@ namespace HealthSystem.Servicos.Interfaces
     {
         Task<IEnumerable<Consulta>> ObterTodasConsultas();
         Task<Consulta> ObterConsultaPorId(int id);
-        Task<int> AgendarConsulta(Consulta consulta);
-        Task AtualizarConsulta(Consulta consulta);
+        Task<int> AgendarConsulta(CriarConsultaComando consulta);
+        Task AtualizarConsulta(AtualizarConsultaComando consulta);
         Task RemoverConsulta(int id);
     }
 }

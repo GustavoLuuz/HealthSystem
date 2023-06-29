@@ -1,4 +1,5 @@
 
+using HealthSystem.Aplicacao.Comandos;
 using HealthSystem.Dominio.Entidades;
 
 namespace HealthSystem.Aplicacao.Servicos.Interfaces
@@ -7,8 +8,8 @@ namespace HealthSystem.Aplicacao.Servicos.Interfaces
     {
         Task<IEnumerable<Medico>> ObterTodosMedicos();
         Task<Medico> ObterMedicoPorId(int id);
-        Task<int> CadastrarMedico(Medico medico);
-        Task AtualizarMedico(Medico medico);
+        Task<int> CadastrarMedico(CriarMedicoComando medico);
+        Task AtualizarMedico(AtualizarMedicoComando medico);
         Task RemoverMedico(int id);
     }
 }

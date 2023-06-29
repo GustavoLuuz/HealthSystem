@@ -32,50 +32,5 @@ namespace HealthSystem.Api.Controllers
 
             return Ok(paciente);
         }
-
-        [HttpPost]
-        public async Task<ActionResult<int>> CadastrarPaciente([FromBody] Paciente paciente)
-        {
-            try
-            {
-                var pacienteId = await _pacienteServico.CadastrarPaciente(paciente);
-                return CreatedAtAction(nameof(ObterPacientePorId), new { id = pacienteId }, pacienteId);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult> AtualizarPaciente(int id, [FromBody] Paciente paciente)
-        {
-            if (id != paciente.Id)
-                return BadRequest();
-
-            try
-            {
-                await _pacienteServico.AtualizarPaciente(paciente);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> RemoverPaciente(int id)
-        {
-            try
-            {
-                await _pacienteServico.RemoverPaciente(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
     }
 }

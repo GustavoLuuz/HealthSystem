@@ -10,7 +10,7 @@ namespace HealthSystem.Dominio.Entidades
         public string Email { get; private set; }
         public DateTime DataNascimento { get; private set; }
 
-        protected Pessoa(string? nome, string? cpf, DateTime dataNascimento, string? email)
+        protected Pessoa(string nome, string cpf, DateTime dataNascimento, string email)
         {
             DefinirNome(nome);
             DefinirCPF(cpf);
@@ -19,7 +19,7 @@ namespace HealthSystem.Dominio.Entidades
         }
         protected Pessoa(){}
 
-        private void DefinirNome(string nome)
+        protected void DefinirNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
                 throw new ArgumentException("O nome não pode estar em branco.");
@@ -27,7 +27,7 @@ namespace HealthSystem.Dominio.Entidades
             Nome = nome;
         }
 
-        private void DefinirCPF(string cpf)
+        protected void DefinirCPF(string cpf)
         {
             if (string.IsNullOrWhiteSpace(cpf))
                 throw new ArgumentException("O CPF não pode estar em branco.");
@@ -76,7 +76,7 @@ namespace HealthSystem.Dominio.Entidades
             return cpf.EndsWith(digito1.ToString() + digito2.ToString());
         }
 
-        private void DefinirDataNascimento(DateTime dataNascimento)
+        protected void DefinirDataNascimento(DateTime dataNascimento)
         {
             if (!ValidarDataNascimento(dataNascimento))
                 throw new ArgumentException("A data de nascimento não é válida.");

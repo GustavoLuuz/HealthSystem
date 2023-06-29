@@ -1,11 +1,8 @@
 
 using HealthSystem.Dominio.Entidades;
+using HealthSystem.Dominio.InterfaceRepositorios;
 using HealthSystem.Infra.Data;
-using HealthSystem.Infra.Repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HealthSystem.Infra.Repositorios
 {

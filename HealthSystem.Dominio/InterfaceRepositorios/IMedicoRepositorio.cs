@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using HealthSystem.Dominio.Entidades;
 
-namespace HealthSystem.Infra.Repositorios.Interfaces
+namespace HealthSystem.Dominio.InterfaceRepositorios
 {
     public interface IMedicoRepositorio
     {

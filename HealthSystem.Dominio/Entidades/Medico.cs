@@ -14,7 +14,7 @@ namespace HealthSystem.Dominio.Entidades
             string email,
             string especialidade,
             string crm)
-            : base(nome, cpf, dataNascimento, email)
+            : base( nome, cpf, dataNascimento, email)
         {
             DefinirEspecialidade(especialidade);
             DefinirCRM(crm);
@@ -37,5 +37,21 @@ namespace HealthSystem.Dominio.Entidades
 
             CRM = crm;
         }
+        public void AtualizarMedico(
+                    string nome,
+                    string cpf,
+                    DateTime dataNascimento,
+                    string email,
+                    string especialidade,
+                    string crm)
+        {
+            DefinirNome(nome);
+            DefinirCPF(cpf);
+            DefinirDataNascimento(dataNascimento);
+            DefinirEmail(email);
+            DefinirEspecialidade(especialidade);
+            DefinirCRM(crm);
+        }
+
     }
 }

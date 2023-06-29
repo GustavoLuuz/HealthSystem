@@ -7,9 +7,9 @@ namespace HealthSystem.Dominio.Enumerador
 {
     public enum  EConsultaSituacao
     {
-        Agendada,
-        EmAndamento,
-        Concluida,
-        Cancelada
+        Agendada = 0,
+        EmAndamento = 1,
+        Concluida = 2,
+        Cancelada = 3
     }
 }

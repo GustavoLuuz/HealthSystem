@@ -1,5 +1,3 @@
-using System;
-using HealthSystem.Dominio.Entidades;
 using HealthSystem.Dominio.Enumerador;
 
 namespace HealthSystem.Dominio.Entidades
@@ -27,8 +25,7 @@ namespace HealthSystem.Dominio.Entidades
             DefinirSituacao(situacao);
         }
 
-        protected Consulta()
-        { }
+        protected Consulta() { }
 
         public static Consulta CriarConsulta(
             DateTime dataHora,
@@ -71,6 +68,31 @@ namespace HealthSystem.Dominio.Entidades
         private void DefinirSituacao(EConsultaSituacao situacao)
         {
             Situacao = situacao;
+        }
+
+        public void AtualizarConsulta(Medico medico, Paciente paciente, DateTime dataHora, string observacoes, EConsultaSituacao situacao)
+        {
+            AtualizarMedico(medico);
+            AtualizarPaciente(paciente);
+            DefinirDataHora(dataHora);
+            DefinirObservacoes(observacoes);
+            DefinirSituacao(situacao);
+        }
+
+        private void AtualizarMedico(Medico medico)
+        {
+            if (medico == null)
+                throw new ArgumentNullException(nameof(medico), "O médico da consulta não pode ser nulo.");
+
+            Medico = medico;
+        }
+
+        private void AtualizarPaciente(Paciente paciente)
+        {
+            if (paciente == null)
+                throw new ArgumentNullException(nameof(paciente), "O paciente da consulta não pode ser nulo.");
+
+            Paciente = paciente;
         }
     }
 }

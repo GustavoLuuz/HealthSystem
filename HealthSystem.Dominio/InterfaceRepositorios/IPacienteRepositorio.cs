@@ -1,6 +1,6 @@
 using HealthSystem.Dominio.Entidades;
 
-namespace HealthSystem.Infra.Repositorios.Interfaces
+namespace HealthSystem.Dominio.InterfaceRepositorios
 {
     public interface IPacienteRepositorio
     {

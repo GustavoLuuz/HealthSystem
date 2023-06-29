@@ -1,6 +1,7 @@
+using HealthSystem.Aplicacao.Comandos;
 using HealthSystem.Aplicacao.Servicos.Interfaces;
 using HealthSystem.Dominio.Entidades;
-using HealthSystem.Infra.Repositorios.Interfaces;
+using HealthSystem.Dominio.InterfaceRepositorios;
 
 namespace HealthSystem.Servicos
 {
@@ -23,21 +24,43 @@ namespace HealthSystem.Servicos
             return await _medicoRepositorio.ObterPorId(id);
         }
 
-        public async Task<int> CadastrarMedico(Medico medico)
+        public async Task<int> CadastrarMedico(CriarMedicoComando medicoComando)
         {
-            if (medico == null)
-                throw new ArgumentNullException(nameof(medico));
+            if (medicoComando == null)
+                throw new ArgumentNullException(nameof(medicoComando));
+
+            var medico = new Medico(
+                medicoComando.Nome,
+                medicoComando.Cpf,
+                medicoComando.DataNascimento,
+                medicoComando.Email,
+                medicoComando.Especialidade,
+                medicoComando.CRM);
 
             return await _medicoRepositorio.Inserir(medico);
         }
 
-        public async Task AtualizarMedico(Medico medico)
+        public async Task AtualizarMedico(AtualizarMedicoComando medicoComando)
         {
-            if (medico == null)
-                throw new ArgumentNullException(nameof(medico));
+            if (medicoComando == null)
+                throw new ArgumentNullException(nameof(medicoComando));
 
-            await _medicoRepositorio.Atualizar(medico);
+            var medicoExistente = await _medicoRepositorio.ObterPorId(medicoComando.Id);
+
+            if (medicoExistente == null)
+                throw new Exception("Médico não encontrado.");
+
+            medicoExistente.AtualizarMedico(
+                medicoComando.Nome,
+                medicoComando.Cpf,
+                medicoComando.DataNascimento,
+                medicoComando.Email,
+                medicoComando.Especialidade,
+                medicoComando.CRM
+             );
+            await _medicoRepositorio.Atualizar(medicoExistente);
         }
+
 
         public async Task RemoverMedico(int id)
         {
