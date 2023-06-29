@@ -8,17 +8,19 @@ namespace HealthSystem.Dominio.Entidades
         public string CRM { get; private set; }
 
         public Medico(
-            string nome, 
-            string cpf, 
+            string nome,
+            string cpf,
             DateTime dataNascimento,
             string email,
-            string especialidade, 
+            string especialidade,
             string crm)
             : base(nome, cpf, dataNascimento, email)
         {
             DefinirEspecialidade(especialidade);
             DefinirCRM(crm);
         }
+        protected Medico()
+        { }
 
         private void DefinirEspecialidade(string especialidade)
         {

@@ -16,6 +16,7 @@ namespace HealthSystem.Dominio.Entidades
         {
             DefinirPlanoSaude(planoSaude);
         }
+        protected Paciente() { }
 
         private void DefinirPlanoSaude(string planoSaude)
         {

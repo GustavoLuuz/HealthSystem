@@ -2,22 +2,22 @@ using System;
 using HealthSystem.Dominio.Entidades;
 using HealthSystem.Dominio.Enumerador;
 
-namespace HealthSystem.Domain.Entidades
-{   
+namespace HealthSystem.Dominio.Entidades
+{
     public class Consulta
     {
         public int Id { get; private set; }
         public DateTime DataHora { get; private set; }
-        public Medico Medico { get; private set; }
-        public Paciente Paciente { get; private set; }
+        public Medico Medico { get; protected set; }
+        public Paciente Paciente { get; protected set; }
         public string Observacoes { get; private set; }
         public EConsultaSituacao Situacao { get; private set; }
 
-        private Consulta(
-            DateTime dataHora, 
-            Medico medico, 
-            Paciente paciente, 
-            string observacoes, 
+        public Consulta(
+            DateTime dataHora,
+            Medico medico,
+            Paciente paciente,
+            string observacoes,
             EConsultaSituacao situacao)
         {
             DefinirDataHora(dataHora);
@@ -26,6 +26,9 @@ namespace HealthSystem.Domain.Entidades
             DefinirObservacoes(observacoes);
             DefinirSituacao(situacao);
         }
+
+        protected Consulta()
+        { }
 
         public static Consulta CriarConsulta(
             DateTime dataHora,
@@ -66,7 +69,7 @@ namespace HealthSystem.Domain.Entidades
         }
 
         private void DefinirSituacao(EConsultaSituacao situacao)
-        {            
+        {
             Situacao = situacao;
         }
     }

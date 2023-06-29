@@ -10,13 +10,14 @@ namespace HealthSystem.Dominio.Entidades
         public string Email { get; private set; }
         public DateTime DataNascimento { get; private set; }
 
-        protected Pessoa(string nome, string cpf, DateTime dataNascimento, string email)
+        protected Pessoa(string? nome, string? cpf, DateTime dataNascimento, string? email)
         {
             DefinirNome(nome);
             DefinirCPF(cpf);
             DefinirDataNascimento(dataNascimento);
             DefinirEmail(email);
         }
+        protected Pessoa(){}
 
         private void DefinirNome(string nome)
         {

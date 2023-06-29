@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HealthSystem.Dominio\HealthSystem.Dominio.csproj" />
-    <ProjectReference Include="..\HealthSystem.Infra\HealthSystem.Infra.csproj" />
+    <ProjectReference Include="..\HealthSystem.Aplicacao\HealthSystem.Aplicacao.csproj" />    
   </ItemGroup>
 
 </Project>

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Infra", "Healt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Testes", "HealthSystem.Testes\HealthSystem.Testes.csproj", "{18D018C8-FF57-4CBB-9EE8-8A53CD822868}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthSystem.Aplicacao", "HealthSystem.Aplicacao\HealthSystem.Aplicacao.csproj", "{7B793C54-B053-4406-BEC3-0CB8433952B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,9 @@ Global
 		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18D018C8-FF57-4CBB-9EE8-8A53CD822868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B793C54-B053-4406-BEC3-0CB8433952B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B793C54-B053-4406-BEC3-0CB8433952B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B793C54-B053-4406-BEC3-0CB8433952B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B793C54-B053-4406-BEC3-0CB8433952B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
