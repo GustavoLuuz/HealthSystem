@@ -78,12 +78,16 @@ namespace HealthSystem.Dominio.Entidades
 
         private void DefinirDataNascimento(DateTime dataNascimento)
         {
-            if (dataNascimento > DateTime.Now.Date)
-                throw new ArgumentException("A data de nascimento não pode ser uma data futura.");
+            if (!ValidarDataNascimento(dataNascimento))
+                throw new ArgumentException("A data de nascimento não é válida.");
 
-            DataNascimento = dataNascimento;
+            DataNascimento = dataNascimento.Date;
         }
 
+        private bool ValidarDataNascimento(DateTime dataNascimento)
+        {
+            return dataNascimento != DateTime.MinValue && dataNascimento <= DateTime.Now.Date;
+        }
         protected void DefinirEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -97,7 +101,7 @@ namespace HealthSystem.Dominio.Entidades
 
         private bool ValidarEmail(string email)
         {
-            string pattern = @"^[a-zA-Z0-9]{2}@[a-zA-Z0-9]{2}\.[a-zA-Z0-9-.]+$";
+            string pattern = @"^.+@.+\..+$";
             return Regex.IsMatch(email, pattern);
         }
     }

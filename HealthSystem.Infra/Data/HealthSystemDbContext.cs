@@ -10,11 +10,8 @@ namespace HealthSystem.Infra.Data
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
 
-
-        protected override void OnConfiguring(
-            DbContextOptionsBuilder options)
+        public HealthSystemDbContext(DbContextOptions<HealthSystemDbContext> options) : base(options)
         {
-            options.UseSqlServer("Server=localhost,1433;Database=HealthSystemDB;User ID=sa;Password=1q2w3eaa4r@#$");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
