@@ -22,6 +22,16 @@ builder.Services.AddScoped<IConsultaRepositorio, ConsultaRepositorio>();
 builder.Services.AddDbContext<HealthSystemDbContext>(options =>
     options.UseSqlServer("Server=localhost,1433;Database=HealthSystemDB;User ID=sa;Password=1q2w3eaa4r@#$"));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builderCors =>
+        {
+            builderCors.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+        });
+});
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -31,6 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

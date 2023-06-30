@@ -17,12 +17,18 @@ namespace HealthSystem.Infra.Repositorios
 
         public async Task<IEnumerable<Consulta>> ObterTodos()
         {
-            return await _dbContext.Consultas.ToListAsync();
+            return await _dbContext.Consultas
+                .Include(c => c.Medico)
+                .Include(c => c.Paciente)
+                .ToListAsync();
         }
 
         public async Task<Consulta> ObterPorId(int id)
         {
-            return await _dbContext.Consultas.FindAsync(id);
+            return await _dbContext.Consultas
+                .Include(c => c.Medico)
+                .Include(c => c.Paciente)
+                .FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<int> Inserir(Consulta consulta)

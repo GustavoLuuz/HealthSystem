@@ -26,4 +26,8 @@
     <ProjectReference Include="..\HealthSystem.Dominio\HealthSystem.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Aplicacao\" />
+  </ItemGroup>
+
 </Project>

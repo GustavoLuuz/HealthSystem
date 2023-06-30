@@ -40,7 +40,7 @@ namespace HealthSystem.Api.Controllers
             try
             {
                 var consultaId = await _consultaServico.AgendarConsulta(consultaComando);
-                return CreatedAtAction(nameof(ObterConsultaPorId), new { id = consultaId }, consultaId);
+                return Ok();
             }
             catch (Exception ex)
             {
