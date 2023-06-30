@@ -1,6 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <None Remove="Script\PopularBanco.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Script\PopularBanco.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HealthSystem.Dominio\HealthSystem.Dominio.csproj" />
   </ItemGroup>
 

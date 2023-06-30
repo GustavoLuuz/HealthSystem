@@ -14,6 +14,7 @@ namespace HealthSystem.Infra.Data
         {
         }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ConsultaMap());

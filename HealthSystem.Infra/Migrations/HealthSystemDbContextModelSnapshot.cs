@@ -33,7 +33,7 @@ namespace HealthSystem.Infra.Migrations
                     b.Property<DateTime>("DataHora")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 6, 29, 3, 3, 30, 910, DateTimeKind.Utc).AddTicks(399));
+                        .HasDefaultValue(new DateTime(2023, 6, 30, 18, 19, 49, 404, DateTimeKind.Utc).AddTicks(4367));
 
                     b.Property<int>("MedicoId")
                         .HasColumnType("int");
@@ -79,7 +79,7 @@ namespace HealthSystem.Infra.Migrations
                     b.Property<DateTime>("DataNascimento")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 6, 29, 3, 3, 30, 915, DateTimeKind.Utc).AddTicks(8764));
+                        .HasDefaultValue(new DateTime(2023, 6, 30, 18, 19, 49, 404, DateTimeKind.Utc).AddTicks(6476));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -120,7 +120,7 @@ namespace HealthSystem.Infra.Migrations
                     b.Property<DateTime>("DataNascimento")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 6, 29, 3, 3, 30, 916, DateTimeKind.Utc).AddTicks(224));
+                        .HasDefaultValue(new DateTime(2023, 6, 30, 18, 19, 49, 404, DateTimeKind.Utc).AddTicks(7534));
 
                     b.Property<string>("Email")
                         .IsRequired()

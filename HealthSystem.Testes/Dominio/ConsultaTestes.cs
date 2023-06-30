@@ -97,5 +97,14 @@ namespace HealthSystem.Testes.Dominio
             Assert.Throws<ArgumentNullException>(() => consulta.AtualizarConsulta(_medico, null, DateTime.Now.AddHours(2), "observacoes", EConsultaSituacao.Agendada));
         }
 
+        [Fact]
+        public void CriarConsulta_DeveLancarExcecao_QuandoObservacoesVazias()
+        {
+            var dataHora = DateTime.Now.AddHours(2);
+            var observacoes = "";
+
+            Assert.Throws<ArgumentException>(() => Consulta.CriarConsulta(dataHora, _medico, _paciente, observacoes));
+        }
+
     }
 }

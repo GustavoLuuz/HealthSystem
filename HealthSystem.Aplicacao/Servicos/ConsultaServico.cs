@@ -29,7 +29,9 @@ namespace HealthSystem.Servicos
 
         public async Task<Consulta> ObterConsultaPorId(int id)
         {
-            return await _consultaRepositorio.ObterPorId(id);
+            var consulta = await _consultaRepositorio.ObterPorId(id);
+            consulta.ObterDataFormatada();
+            return consulta;
         }
 
         public async Task<int> AgendarConsulta(CriarConsultaComando consultaComando)

@@ -62,6 +62,9 @@ namespace HealthSystem.Dominio.Entidades
 
         private void DefinirObservacoes(string observacoes)
         {
+            if (string.IsNullOrEmpty(observacoes))
+                throw new ArgumentException("A observação da consulta não pode estar vazia.");
+
             Observacoes = observacoes;
         }
 
@@ -93,6 +96,10 @@ namespace HealthSystem.Dominio.Entidades
                 throw new ArgumentNullException(nameof(paciente), "O paciente da consulta não pode ser nulo.");
 
             Paciente = paciente;
+        }
+        public string ObterDataFormatada()
+        {
+            return DataHora.ToString("yyyy-MM-dd");
         }
     }
 }
