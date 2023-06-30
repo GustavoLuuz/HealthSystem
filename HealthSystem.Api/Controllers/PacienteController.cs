@@ -1,4 +1,3 @@
-using HealthSystem.Aplicacao.Servicos.Interfaces;
 using HealthSystem.Dominio.Entidades;
 using HealthSystem.Servicos.Interfaces;
 using Microsoft.AspNetCore.Mvc;

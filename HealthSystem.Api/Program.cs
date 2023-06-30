@@ -1,11 +1,10 @@
 using HealthSystem.Aplicacao.Servicos.Interfaces;
+using HealthSystem.Dominio.InterfaceRepositorios;
+using HealthSystem.Infra.Data;
 using HealthSystem.Infra.Repositorios;
 using HealthSystem.Servicos;
 using HealthSystem.Servicos.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using HealthSystem.Infra.Data;
-using HealthSystem.Dominio.InterfaceRepositorios;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();

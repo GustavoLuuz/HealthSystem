@@ -1,4 +1,3 @@
-
 using HealthSystem.Aplicacao.Comandos;
 using HealthSystem.Dominio.Entidades;
 

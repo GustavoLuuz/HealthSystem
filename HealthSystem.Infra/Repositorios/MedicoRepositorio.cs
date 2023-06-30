@@ -1,4 +1,3 @@
-
 using HealthSystem.Dominio.Entidades;
 using HealthSystem.Dominio.InterfaceRepositorios;
 using HealthSystem.Infra.Data;

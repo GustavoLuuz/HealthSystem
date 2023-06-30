@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using HealthSystem.Dominio.Entidades;
+﻿using HealthSystem.Dominio.Entidades;
 using HealthSystem.Infra.Mapeamentos;
+using Microsoft.EntityFrameworkCore;
 
 namespace HealthSystem.Infra.Data
 {

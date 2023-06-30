@@ -1,7 +1,5 @@
 using HealthSystem.Aplicacao.Comandos.ConsultaComandos;
 using HealthSystem.Dominio.Entidades;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace HealthSystem.Servicos.Interfaces
 {
